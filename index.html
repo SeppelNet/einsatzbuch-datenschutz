@@ -5,86 +5,235 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Datenschutzerklärung – Einsatzbuch</title>
 <style>
-  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6;color:#1b2630;max-width:780px;margin:0 auto;padding:24px 18px;background:#fff}
-  h1{font-size:1.8em;margin:0 0 .2em}
-  h2{font-size:1.2em;margin:1.8em 0 .5em;padding-bottom:.2em;border-bottom:1px solid #d7dee5}
-  .meta{color:#5b6b78;margin:0 0 1.5em}
-  .note{border-left:4px solid #4fb3d9;background:#eef8fc;padding:10px 14px;border-radius:6px;margin:1em 0}
-  ul{padding-left:1.3em}
-  address{font-style:normal}
+  :root {
+    --bg-gradient-start: #f1f5f9;
+    --bg-gradient-end: #e2e8f0;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent: #0284c7;
+    --accent-soft: #f0f9ff;
+    --border-color: #e2e8f0;
+    --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-gradient-start: #0f172a;
+      --bg-gradient-end: #1e293b;
+      --card-bg: #1e293b;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --border-color: #334155;
+      --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    color: var(--text-main);
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px 48px;
+    box-shadow: var(--shadow);
+  }
+
+  header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    line-height: 1.2;
+  }
+
+  .meta {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    margin: 2.2em 0 0.75em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-main);
+  }
+
+  p {
+    margin: 0 0 1em;
+  }
+
+  ul {
+    padding-left: 1.35em;
+    margin: 0 0 1.2em;
+  }
+
+  li {
+    margin-bottom: 0.45em;
+  }
+
+  li::marker {
+    color: var(--accent);
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  address {
+    font-style: normal;
+    background: var(--accent-soft);
+    border: 1px solid var(--border-color);
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin-bottom: 1.2em;
+  }
+
+  .note {
+    border-left: 4px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 14px 18px;
+    border-radius: 0 10px 10px 0;
+    margin: 1.4em 0;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 640px) {
+    body {
+      padding: 16px 12px;
+    }
+    .container {
+      padding: 24px 20px;
+      border-radius: 12px;
+    }
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
 </style>
 </head>
 <body>
 
-<h1>Datenschutzerklärung – Einsatzbuch</h1>
-<p class="meta"><strong>Stand:</strong> 19. November 2026 · <strong>Version:</strong> 1.4</p>
+<main class="container">
+  <header>
+    <span class="badge">Rechtliches &amp; Privatsphäre</span>
+    <h1>Datenschutzerklärung – Einsatzbuch</h1>
+    <p class="meta"><strong>Stand:</strong> 19. November 2026 &nbsp;·&nbsp; <strong>Version:</strong> 1.4</p>
+  </header>
 
-<h2>1. Verantwortlicher</h2>
-<address>
-  <strong>Kai Wöhlert</strong><br>
-  Bogenstarsse 21, 22926 Ahrensburg, Deutschland<br>
-  E-Mail: <a href="mailto:woehlert.kai@gmail.com">woehlert.kai@gmail.com</a>
-</address>
-<p>Einsatzbuch ist eine kostenlose App ohne Werbung und ohne kommerzielle Absicht.</p>
+  <h2>1. Verantwortlicher</h2>
+  <address>
+    <strong>Kai Wöhlert</strong><br>
+    Bogenstarsse 21, 22926 Ahrensburg, Deutschland<br>
+    E-Mail: <a href="mailto:woehlert.kai@gmail.com">woehlert.kai@gmail.com</a>
+  </address>
+  <p>Einsatzbuch ist eine kostenlose App ohne Werbung und ohne kommerzielle Absicht.</p>
 
-<h2>2. Welche Daten die App speichert</h2>
-<p>Die App speichert die Angaben, die Sie selbst eintragen:</p>
-<ul>
-  <li>Ihre eigenen Angaben: Name, Adresse, Telefon und E-Mail (freiwillig)</li>
-  <li>Ihre Unterschrift (freiwillig): Sie zeichnen sie in den Einstellungen selbst</li>
-  <li>Auftraggeber mit Vergütung, Adresse und freiwillig einem Ansprechpartner (Name, Telefon, E-Mail)</li>
-  <li>Aufträge, Einsatzorte, Arbeitstage, Pausen, geplante Tage, Erinnerungen und Notizen</li>
-  <li>Fahrten und Kilometer, Auslagen, Vorschüsse und Abzüge, Zuschläge</li>
-  <li>Freiwillig: Trinkgeld und Einnahmen (Kasse)</li>
-  <li>Favoriten, frühere Auswertungen im Archiv und Ihre Einstellungen</li>
-  <li>Ihr persönlicher Zugangscode für die Streckenberechnung, falls Sie einen eintragen</li>
-</ul>
-<p>Diese Daten liegen im geschützten Speicherbereich der App auf Ihrem Gerät. Die Unterschrift wird nicht übertragen. Der Entwickler erhält keine dieser Daten und kann sie nicht einsehen. Beim Deinstallieren der App werden sie gelöscht, mit Ausnahme der Sicherungsdateien im Ordner „Download“ (siehe Abschnitt 6).</p>
-<div class="note">Wenn Sie Ansprechpartner eintragen, speichern Sie Daten anderer Personen. Bitte tragen Sie nur ein, was Sie für Ihre Arbeit brauchen.</div>
+  <h2>2. Welche Daten die App speichert</h2>
+  <p>Die App speichert die Angaben, die Sie selbst eintragen:</p>
+  <ul>
+    <li>Ihre eigenen Angaben: Name, Adresse, Telefon und E-Mail (freiwillig)</li>
+    <li>Ihre Unterschrift (freiwillig): Sie zeichnen sie in den Einstellungen selbst</li>
+    <li>Auftraggeber mit Vergütung, Adresse und freiwillig einem Ansprechpartner (Name, Telefon, E-Mail)</li>
+    <li>Aufträge, Einsatzorte, Arbeitstage, Pausen, geplante Tage, Erinnerungen und Notizen</li>
+    <li>Fahrten und Kilometer, Auslagen, Vorschüsse und Abzüge, Zuschläge</li>
+    <li>Freiwillig: Trinkgeld und Einnahmen (Kasse)</li>
+    <li>Favoriten, frühere Auswertungen im Archiv und Ihre Einstellungen</li>
+    <li>Ihr persönlicher Zugangscode für die Streckenberechnung, falls Sie einen eintragen</li>
+  </ul>
+  <p>Diese Daten liegen im geschützten Speicherbereich der App auf Ihrem Gerät. Die Unterschrift wird nicht übertragen. Der Entwickler erhält keine dieser Daten und kann sie nicht einsehen. Beim Deinstallieren der App werden sie gelöscht, mit Ausnahme der Sicherungsdateien im Ordner „Download“ (siehe Abschnitt 6).</p>
+  <div class="note">Wenn Sie Ansprechpartner eintragen, speichern Sie Daten anderer Personen. Bitte tragen Sie nur ein, was Sie für Ihre Arbeit brauchen.</div>
 
-<h2>3. Automatische Streckenberechnung (freiwillig)</h2>
-<p>Die App funktioniert ohne Internet. Kilometer können Sie von Hand eintragen. Nur wenn Sie in den Einstellungen einen eigenen Zugangscode eintragen, nutzt die App den Dienst <strong>openrouteservice</strong> der Heidelberg Institute for Geoinformation Technology (HeiGIT gGmbH), Heidelberg.</p>
-<p>Dabei sendet Ihr Handy direkt an diesen Dienst:</p>
-<ul>
-  <li>Ihre Adresse als Startpunkt und die Adresse des Einsatzorts als Ziel</li>
-  <li>Bei den Adressvorschlägen den Text, den Sie gerade in ein Adressfeld tippen</li>
-  <li>Ihren Zugangscode</li>
-  <li>Technisch bedingt die IP-Adresse Ihres Geräts</li>
-</ul>
-<p>Weitere Daten aus der App, etwa Arbeitszeiten, Beträge oder Ihre Unterschrift, werden nicht übertragen. Für die Verarbeitung beim Anbieter gilt dessen Datenschutzerklärung auf openrouteservice.org. Sie können die Funktion jederzeit abschalten, indem Sie den Zugangscode in den Einstellungen entfernen.</p>
+  <h2>3. Automatische Streckenberechnung (freiwillig)</h2>
+  <p>Die App funktioniert ohne Internet. Kilometer können Sie von Hand eintragen. Nur wenn Sie in den Einstellungen einen eigenen Zugangscode eintragen, nutzt die App den Dienst <strong>openrouteservice</strong> der Heidelberg Institute for Geoinformation Technology (HeiGIT gGmbH), Heidelberg.</p>
+  <p>Dabei sendet Ihr Handy direkt an diesen Dienst:</p>
+  <ul>
+    <li>Ihre Adresse als Startpunkt und die Adresse des Einsatzorts als Ziel</li>
+    <li>Bei den Adressvorschlägen den Text, den Sie gerade in ein Adressfeld tippen</li>
+    <li>Ihren Zugangscode</li>
+    <li>Technisch bedingt die IP-Adresse Ihres Geräts</li>
+  </ul>
+  <p>Weitere Daten aus der App, etwa Arbeitszeiten, Beträge oder Ihre Unterschrift, werden nicht übertragen. Für die Verarbeitung beim Anbieter gilt dessen Datenschutzerklärung auf openrouteservice.org. Sie können die Funktion jederzeit abschalten, indem Sie den Zugangscode in den Einstellungen entfernen.</p>
 
-<h2>4. Karten und Navigation</h2>
-<p>Wenn Sie „Strecke in Google Maps ansehen“ oder „Navigation starten“ antippen, übergibt die App die Adresse an Google Maps oder an die Navigations-App, die Sie auswählen. Für die weitere Verarbeitung gelten die Bestimmungen dieses Anbieters. Ohne Ihr Antippen wird nichts übergeben.</p>
+  <h2>4. Karten und Navigation</h2>
+  <p>Wenn Sie „Strecke in Google Maps ansehen“ oder „Navigation starten“ antippen, übergibt die App die Adresse an Google Maps oder an die Navigations-App, die Sie auswählen. Für die weitere Verarbeitung gelten die Bestimmungen dieses Anbieters. Ohne Ihr Antippen wird nichts übergeben.</p>
 
-<h2>5. Erinnerungen und Kalender</h2>
-<ul>
-  <li><strong>Erinnerungen:</strong> Für geplante Tage kann die App Benachrichtigungen anzeigen. Diese werden auf dem Handy geplant, nicht über einen Server. Dafür fragt die App nach der Erlaubnis für Benachrichtigungen. Damit Erinnerungen nach einem Neustart des Handys erhalten bleiben, darf die App beim Gerätestart kurz aktiv werden.</li>
-  <li><strong>Kalender:</strong> Auf Wunsch öffnet die App Ihre Kalender-App mit einem vorausgefüllten Termin. Gespeichert wird er erst, wenn Sie ihn dort bestätigen. Einsatzbuch liest Ihren Kalender nicht.</li>
-</ul>
+  <h2>5. Erinnerungen und Kalender</h2>
+  <ul>
+    <li><strong>Erinnerungen:</strong> Für geplante Tage kann die App Benachrichtigungen anzeigen. Diese werden auf dem Handy geplant, nicht über einen Server. Dafür fragt die App nach der Erlaubnis für Benachrichtigungen. Damit Erinnerungen nach einem Neustart des Handys erhalten bleiben, darf die App beim Gerätestart kurz aktiv werden.</li>
+    <li><strong>Kalender:</strong> Auf Wunsch öffnet die App Ihre Kalender-App mit einem vorausgefüllten Termin. Gespeichert wird er erst, wenn Sie ihn dort bestätigen. Einsatzbuch liest Ihren Kalender nicht.</li>
+  </ul>
 
-<h2>6. Speichern, Teilen und Datensicherung</h2>
-<p><strong>Auswertungen:</strong> PDF- und CSV-Dateien entstehen auf dem Handy. Sie verlassen es nur, wenn Sie sie selbst speichern oder über „Teilen“ weitergeben, zum Beispiel per E-Mail. Ist beim Auftraggeber eine E-Mail-Adresse hinterlegt, trägt die App sie in Ihrer Mail-App als Empfänger ein; senden müssen Sie selbst. Ist Ihre Unterschrift eingerichtet, erscheint sie in der PDF-Auswertung. Sie verlässt das Handy nur mit dieser Datei, wenn Sie sie teilen.</p>
-<p><strong>Datensicherung:</strong> Beim Sichern wählen Sie, welche Teile enthalten sein sollen, zum Beispiel Aufträge, persönliche Angaben, Unterschrift oder Zugangscode. Standardmäßig sind alle Teile ausgewählt. Die Sicherungsdatei enthält nur, was Sie angehakt haben. Auf Wunsch legt die App Sicherungen regelmäßig im Ordner „Download/Einsatzbuch“ auf Ihrem Handy ab. Auf diesen Ordner können andere Apps mit Dateizugriff zugreifen, und er bleibt beim Deinstallieren erhalten. Geben Sie Sicherungen nur an Orte und Personen weiter, denen Sie vertrauen.</p>
-<p><strong>Android-Sicherung:</strong> Wenn auf Ihrem Gerät die Android- bzw. Google-Datensicherung eingeschaltet ist, kann Android die Daten der App automatisch in Ihrem Google-Konto sichern. Das steuern Sie in den Einstellungen Ihres Handys.</p>
+  <h2>6. Speichern, Teilen und Datensicherung</h2>
+  <p><strong>Auswertungen:</strong> PDF- und CSV-Dateien entstehen auf dem Handy. Sie verlassen es nur, wenn Sie sie selbst speichern oder über „Teilen“ weitergeben, zum Beispiel per E-Mail. Ist beim Auftraggeber eine E-Mail-Adresse hinterlegt, trägt die App sie in Ihrer Mail-App als Empfänger ein; senden müssen Sie selbst. Ist Ihre Unterschrift eingerichtet, erscheint sie in der PDF-Auswertung. Sie verlässt das Handy nur mit dieser Datei, wenn Sie sie teilen.</p>
+  <p><strong>Datensicherung:</strong> Beim Sichern wählen Sie, welche Teile enthalten sein sollen, zum Beispiel Aufträge, persönliche Angaben, Unterschrift oder Zugangscode. Standardmäßig sind alle Teile ausgewählt. Die Sicherungsdatei enthält nur, was Sie angehakt haben. Auf Wunsch legt die App Sicherungen regelmäßig im Ordner „Download/Einsatzbuch“ auf Ihrem Handy ab. Auf diesen Ordner können andere Apps mit Dateizugriff zugreifen, und er bleibt beim Deinstallieren erhalten. Geben Sie Sicherungen nur an Orte und Personen weiter, denen Sie vertrauen.</p>
+  <p><strong>Android-Sicherung:</strong> Wenn auf Ihrem Gerät die Android- bzw. Google-Datensicherung eingeschaltet ist, kann Android die Daten der App automatisch in Ihrem Google-Konto sichern. Das steuern Sie in den Einstellungen Ihres Handys.</p>
 
-<h2>7. Berechtigungen</h2>
-<ul>
-  <li><strong>Internet:</strong> nur für die freiwillige Streckenberechnung (Abschnitt 3)</li>
-  <li><strong>Benachrichtigungen:</strong> für Erinnerungen an geplante Tage</li>
-  <li><strong>Start nach Neustart:</strong> damit Erinnerungen nach einem Neustart erhalten bleiben</li>
-</ul>
-<p>Die App verwendet keine Analyse-, Werbe- oder Tracking-Dienste und keine Bibliotheken von Drittanbietern, die Daten sammeln.</p>
+  <h2>7. Berechtigungen</h2>
+  <ul>
+    <li><strong>Internet:</strong> nur für die freiwillige Streckenberechnung (Abschnitt 3)</li>
+    <li><strong>Benachrichtigungen:</strong> für Erinnerungen an geplante Tage</li>
+    <li><strong>Start nach Neustart:</strong> damit Erinnerungen nach einem Neustart erhalten bleiben</li>
+  </ul>
+  <p>Die App verwendet keine Analyse-, Werbe- oder Tracking-Dienste und keine Bibliotheken von Drittanbietern, die Daten sammeln.</p>
 
-<h2>8. Rechtsgrundlage</h2>
-<p>Soweit bei der Nutzung personenbezogene Daten an Dritte gehen (Abschnitte 3 und 4), geschieht das nur, weil Sie die jeweilige Funktion selbst nutzen (Art. 6 Abs. 1 lit. a und lit. b DSGVO). Alle übrigen Daten bleiben unter Ihrer alleinigen Kontrolle auf Ihrem Gerät.</p>
+  <h2>8. Rechtsgrundlage</h2>
+  <p>Soweit bei der Nutzung personenbezogene Daten an Dritte gehen (Abschnitte 3 und 4), geschieht das nur, weil Sie die jeweilige Funktion selbst nutzen (Art. 6 Abs. 1 lit. a und lit. b DSGVO). Alle übrigen Daten bleiben unter Ihrer alleinigen Kontrolle auf Ihrem Gerät.</p>
 
-<h2>9. Ihre Rechte</h2>
-<p>Sie können alle Daten in der App jederzeit ändern oder löschen. Durch Deinstallieren der App werden die gespeicherten Daten entfernt; Sicherungsdateien im Ordner „Download“ löschen Sie selbst.</p>
-<p>Nach der DSGVO haben Sie außerdem das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht, eine erteilte Einwilligung zu widerrufen. Da der Entwickler keine Daten von Ihnen erhält, liegen diese Daten ausschließlich bei Ihnen. Bei Fragen schreiben Sie an die oben genannte E-Mail-Adresse.</p>
-<p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, zum Beispiel beim Unabhängigen Landeszentrum für Datenschutz Schleswig-Holstein (ULD), Kiel.</p>
+  <h2>9. Ihre Rechte</h2>
+  <p>Sie können alle Daten in der App jederzeit ändern oder löschen. Durch Deinstallieren der App werden die gespeicherten Daten entfernt; Sicherungsdateien im Ordner „Download“ löschen Sie selbst.</p>
+  <p>Nach der DSGVO haben Sie außerdem das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht, eine erteilte Einwilligung zu widerrufen. Da der Entwickler keine Daten von Ihnen erhält, liegen diese Daten ausschließlich bei Ihnen. Bei Fragen schreiben Sie an die oben genannte E-Mail-Adresse.</p>
+  <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, zum Beispiel beim Unabhängigen Landeszentrum für Datenschutz Schleswig-Holstein (ULD), Kiel.</p>
 
-<h2>10. Änderungen</h2>
-<p>Ändern sich Funktionen der App, wird diese Datenschutzerklärung angepasst. Es gilt die jeweils hier veröffentlichte Fassung.</p>
+  <h2>10. Änderungen</h2>
+  <p>Ändern sich Funktionen der App, wird diese Datenschutzerklärung angepasst. Es gilt die jeweils hier veröffentlichte Fassung.</p>
+</main>
 
 </body>
 </html>
